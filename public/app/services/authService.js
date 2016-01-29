@@ -78,7 +78,7 @@ angular.module('authService',[])
 		}
 
 		return config;
-	}
+	};
 
 	//interceptorFactory.responseError = function(response) {
 
@@ -92,7 +92,7 @@ angular.module('authService',[])
 	return interceptorFactory;
 
 
-})
+});
 
 
 

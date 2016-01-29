@@ -17,7 +17,7 @@ function createToken(user) {
 		username: user.username
 
 	}, secretKey, {
-		expiresInMinute: 1440
+		expirtesInMinute: 1440
 	});
 
 
@@ -171,7 +171,7 @@ module.exports = function(app, express, io) {
 					res.send(err);
 					return;
 				}
-				io.emit('story', newStory);
+				io.emit('story', newStory)
 				res.json({message: "New Story Created!"});
 			});
 
@@ -188,7 +188,7 @@ module.exports = function(app, express, io) {
 					return;
 				}
 
-				res.json(stories);
+				res.send(stories);
 			});
 
 		});
@@ -196,11 +196,11 @@ module.exports = function(app, express, io) {
 
 	api.get('/me', function(req, res) {
 
-		res.json(req.decoded);
+		res.send(req.decoded);
 	});
 
 
 
-	return api
+	return api;
 
 }

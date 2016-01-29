@@ -3,7 +3,7 @@
 <head>
 
 	<base href='/'>
-	<title>Purdue Whisper</title>
+	<title>QNote</title>
 	
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -11,7 +11,7 @@
 	<!-- AngularJS -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.13/angular-route.min.js"></script>
-	<script type="text/javascript" src="socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 
 	<!-- Services -->
 	<script type="text/javascript" src="app/services/authService.js"></script>
@@ -22,7 +22,7 @@
 	<script type="text/javascript" src="app/controllers/userCtrl.js"></script>
 	<script type="text/javascript" src="app/controllers/storyCtrl.js"></script>
 	<!-- Directive -->
-	<script type="text/javascript" src="app/directive/reverse.js"></script>
+	<script type="text/javascript" src="app/directives/reverse.js"></script>
 
 
 
@@ -37,7 +37,7 @@
 	<div class="navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header">
-				<a href="/" class="navbar-brand"><span class="glyphicon glyphicon-book"></span>Purdue Whisper</a>
+				<a href="/" class="navbar-brand"><span class="glyphicon glyphicon-book"></span>QNote</a>
 			</div>
 			
 			<ul class="nav navbar-nav">
@@ -61,7 +61,7 @@
 
 <main class="container">
 
-<div ng-view></div>
+	<div ng-view></div>
 
 </main>
 

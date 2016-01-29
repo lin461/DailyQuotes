@@ -6,17 +6,20 @@ angular.module('storyCtrl', ['storyService'])
 
 		var vm=this;
 
-		Story.allStory()
+		Story.all()
 			.success(function(data) {
 				vm.stories = data;
 			});
 
 
 		vm.createStory = function() {
+
+			vm.processing = true;
+
 			vm.message = '';
 			Story.create(vm.storyData)
 				.success(function(data) {
-
+					vm.processing = false;
 					//clear up the form
 					vm.storyData = {};
 
@@ -32,7 +35,7 @@ angular.module('storyCtrl', ['storyService'])
 
 })
 
-.controller('AllstoriesController', function(stories, socketio) {
+.controller('AllStoriesController', function(stories, socketio) {
 
 	var vm = this;
 	vm.stories = stories.data;
@@ -42,8 +45,4 @@ angular.module('storyCtrl', ['storyService'])
 	});
 
 
-
-
-
-
-})
+});
