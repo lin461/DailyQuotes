@@ -1,6 +1,6 @@
 angular.module('userService',[])
 
-
+// fetch api from api.js
 .factory('User', function($http) {
 	
 	var userFactory = {};

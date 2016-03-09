@@ -1,5 +1,6 @@
 angular.module('userCtrl', ['userService'])
 
+// get the user data and render it to HTML
 .controller('UserController', function(User) {
 
 	var vm = this;
@@ -14,7 +15,7 @@ angular.module('userCtrl', ['userService'])
 
 })
 
-
+// create a user and redirect to home page
 .controller('UserCreateController', function(User, $location, $window) {
 
 	var vm = this;

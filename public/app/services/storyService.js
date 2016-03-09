@@ -17,13 +17,10 @@ angular.module('storyService',[])
 	}
 
 	
-
 	return storyFactory;
 
-
-
-
 }) 
+
 
 .factory('socketio', function($rootScope) {
 

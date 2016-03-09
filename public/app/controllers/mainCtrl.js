@@ -1,3 +1,5 @@
+// create controller to control the data of AngularJS application.
+
 angular.module('mainCtrl', [])
 
 .controller('MainController', function($rootScope, $location, Auth) {
@@ -6,17 +8,22 @@ angular.module('mainCtrl', [])
 
 	vm.loggedIn = Auth.isLoggedIn();
 
+	// scope: data available for the current view. 
+	// rootScope is available for the entire application. 
+	
+	// an event listener to check the logged in user in every request 
 	$rootScope.$on('$routeChangeStart', function() {
 
 		vm.loggedIn = Auth.isLoggedIn();
 
 		Auth.getUser()
+			// .then returns a Promise object. 
 			.then(function(data) {
 				vm.user = data.data;
 			});
 	});
 
-
+	// whenever user click Login 
 	vm.doLogin = function() {
 
 		vm.processing = true;
@@ -29,7 +36,7 @@ angular.module('mainCtrl', [])
 						vm.user = data.data;
 					});
 
-				if(data.success) {
+				if(data.success) { // redirect user to homepage if success
 					$location.path('/');
 				} else {
 					vm.error = data.message;
@@ -37,6 +44,7 @@ angular.module('mainCtrl', [])
 			});
 	}
 
+	// logout function 
 	vm.doLogout = function() {
 		Auth.logout();
 		$location.path('/logout');
